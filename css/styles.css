@@ -1,0 +1,801 @@
+@font-face {
+  font-family: 'Cinzel';
+  src: url('../assets/fonts/Cinzel/Cinzel-Bold.tff');
+}
+
+@font-face {
+  font-family: 'Raleway-thin';
+  src: url('../assets/fonts/Raleway/Raleway-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'Adobe Clean';
+  src: url('../assets/fonts/AdobeClean-Bold.ttf');
+}
+
+
+/* GLOBAL STYLES
+---------------------------------- */
+
+html {
+  box-sizing: border-box;
+  background-image: url(../assets/images/backdrop.jpg);
+  background-size: 100% 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+section.page {
+  height: 46em;
+  position: relative;
+}
+
+h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 4.25em;
+  line-height: 1em;
+  margin: 0;
+}
+
+h2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  letter-spacing: 0.6em;
+  font-weight: 200;
+  margin: 0 0 0 0.35em;
+}
+
+h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8em;
+  letter-spacing: 0.4em;
+  font-weight: 300;
+  margin: 0em 0 0 0.35em;
+  transition: all 0.4s ease-out;
+}
+
+
+h4 {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.03em;
+  font-size: 1em;
+  font-weight: 300;
+  margin: 0.35em 0 1em 0.35em;
+}
+
+.icon-logo {
+  position: fixed;
+  top: 3em;
+  left: 5%;
+}
+
+img.logo {
+  height: 4em;
+}
+
+div.title.name {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(0%, -50%);
+  z-index: 4
+}
+
+/* div.inf0.athena { } */
+
+img.athena-mural {
+  height: 43em;
+}
+
+li {
+  list-style: none;
+}
+
+.scroll-down-btn {
+  position: fixed;
+  transform: rotate(90deg);
+  bottom: 35%;
+  right: -3%;
+  z-index: 10;
+  transition: opacity 0.3s ease-out;
+}
+
+h3:after {
+  content: '';
+  display: inline-block;
+  background: black;
+  width: 9em;
+  height: 0.1em;
+  position: relative;
+  left: 1em;
+  bottom: 0.3em;
+}
+
+.portfolio-links {
+  position: fixed;
+  top: 50%;
+  left: 5.5%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.portfolio-links i:hover {
+  cursor: pointer;
+}
+
+a {
+  display: block;
+  margin: 5em 0;
+  color: black;
+}
+
+div.info {
+  position: absolute;
+  top: 50%;
+  left: 66.6%;
+  transform: translate(-50%, -50%);
+}
+
+.project {
+  cursor: pointer;
+  background: #f8f8f8;
+  height: 8em;
+  width: 20em;
+  margin: 3em 0;
+  border-radius: 0.8em;
+  position: relative;
+  transition: transform 0.4s ease-out;
+  overflow: hidden;
+}
+
+.project:hover {
+  transform: scale(1.05);
+}
+
+
+.project-title {
+  cursor: pointer;
+  z-index: 2;
+  font-family: 'Cinzel', serif;
+  font-size: 1em;
+  color: #b4b4b4;
+  letter-spacing: 0em;
+  font-weight: bold;
+  margin: 0em 0 0 0.35em;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 0 0 2em;
+  transition: all 0.3s ease-out;
+}
+
+.project:hover .project-title {
+  font-size: 1.1em;
+  color: white;
+  letter-spacing: 0.2em;
+  /* text-shadow: 0em 0.5em 2em #000000; */
+}
+
+.project-num {
+  cursor: pointer;
+  z-index: 1;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.4;
+  font-weight: 300;
+  color: #b4b4b4;
+  position: absolute;
+  top: 12%;
+  right: 5%;
+  margin: 0;
+  transition: 0.4s cubic-bezier(0, 0, 0, 0.99);
+}
+
+.project-preview {
+  cursor: pointer;
+  z-index: 0;
+  height: 9em;
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+}
+
+.project:hover .project-preview {
+  z-index: 0;
+  height: 9em;
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  transform: translateX(0);
+  opacity: 90;
+}
+
+.project:hover .project-num {
+  z-index: 1;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12em;
+  font-weight: 900;
+  color: #ffffff;
+  top: -34%;
+  right: 0%;
+  opacity: 0.1;
+}
+
+h6 {
+  margin: 0
+}
+
+.skill-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 1em;
+  grid-row-gap: 1.75em;
+  margin: 1.4em 0 4em;
+}
+
+.skill {
+  position: relative;
+  height: 4.75em;
+  width: 4.75em;
+  border-radius: 50%;
+  background: #f8f8f8;
+  transition: all 0.4s ease-out
+}
+
+.skill i, .skill h6 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #b4b4b4;
+  font-size: 1.75em;
+  transform: translate(-50%, -45%);
+}
+
+div.info.skills {
+  position: absolute;
+  top: 50%;
+  left: 66.6%;
+  transform: translate(-50%, -50%);
+}
+
+.skill:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+h6.photoshop, h6.Ai, h6.Xd {
+  font-family: 'Adobe Clean', sans-serif;
+}
+
+
+
+h6.Clang {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: black;
+}
+
+.skill.HTML:hover {
+  background: #ff1414;
+}
+
+.skill.HTML:hover i {
+  color: white;
+}
+
+.skill.CSS:hover {
+  background: #14b9ff;
+}
+
+.skill.CSS:hover i {
+  color: white;
+}
+
+.skill.Javascript:hover {
+  background: #f0db4f;
+}
+
+.skill.Javascript:hover i {
+  color: #323330;
+}
+
+.skill.React:hover {
+  background: #14d4ff;
+}
+
+.skill.React:hover i {
+  color: white;
+}
+
+.skill.SASS:hover {
+  background: #ff90d1;
+}
+
+.skill.SASS:hover i {
+  color: white;
+}
+
+.skill.Photoshop:hover {
+  background: #001d26;
+}
+
+.skill.Photoshop:hover h6 {
+  color: #00c8ff;
+}
+
+.skill.Node:hover {
+  background: #303030;
+}
+
+.skill.Node:hover i {
+  color: #52c14f;
+}
+
+.skill.Java:hover {
+  background: #ff1414;
+}
+
+.skill.Java:hover i {
+  color: white;
+}
+
+.skill.C:hover {
+  background: #a9bac4;
+}
+
+.skill.C:hover h6 {
+  color: white;
+}
+
+.skill.Python:hover {
+  background: #008cff;
+}
+
+.skill.Python:hover i {
+  color: white;
+}
+
+.skill.Illustrator:hover {
+  background-color: #251300;
+}
+
+.skill.Illustrator:hover h6 {
+  color: #fe7c00;
+}
+
+.skill.Xd:hover {
+  background-color: #272323;
+}
+
+.skill.Xd:hover h6 {
+  color: #ff00c9;
+}
+
+
+
+strong {
+  transition: all 0.5s ease-out;
+  opacity: 0;
+  margin-left: 0.5em;
+}
+
+.btn {
+  color: black;
+  display: inline-block;
+  padding: 0.75em 2em 0.8em;
+  margin: 1.25em 1em 0 -0.1em;
+  background: #f2f2f2;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  border-radius: 2em;
+  transition: background-color 0.4s ease-out;
+  text-align: center;
+}
+
+
+.btn:hover {
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.3em;
+}
+
+/* MEDIA QUERY ------------
+------------------------ */
+
+@media (max-width: 1020px) {
+
+  section.page {
+    height: 46em;
+    position: relative;
+  }
+
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 4.25em;
+    line-height: 1em;
+    margin: 0;
+  }
+
+  h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+    letter-spacing: 0.6em;
+    font-weight: 200;
+    margin: 0 0 0 0.35em;
+  }
+
+  h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8em;
+    letter-spacing: 0.4em;
+    font-weight: 300;
+    margin: 0em 0 0 0.35em;
+    transition: all 0.4s ease-out;
+  }
+
+  /* .scroll:hover {
+    cursor: pointer;
+  } */
+
+  h4 {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.03em;
+    font-size: 1em;
+    font-weight: 300;
+    margin: 0.35em 0 1em 0.35em;
+  }
+
+  .icon-logo {
+    position: fixed;
+    top: 3em;
+    left: 5%;
+  }
+
+  img.logo {
+    height: 4em;
+  }
+
+  div.title.name {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(0%, -50%);
+    z-index: 4
+  }
+
+  /* div.inf0.athena { } */
+
+  img.athena-mural {
+    height: 43em;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .scroll-down-btn {
+    position: fixed;
+    transform: rotate(90deg);
+    bottom: 35%;
+    right: -3%;
+    z-index: 10;
+    transition: opacity 0.3s ease-out;
+  }
+
+  h3:after {
+    content: '';
+    display: inline-block;
+    background: black;
+    width: 9em;
+    height: 0.1em;
+    position: relative;
+    left: 1em;
+    bottom: 0.3em;
+  }
+
+  .portfolio-links {
+    position: fixed;
+    top: 50%;
+    left: 5.5%;
+    transform: translateY(-50%);
+    z-index: 5;
+  }
+
+  .portfolio-links i:hover {
+    cursor: pointer;
+  }
+
+  a {
+    display: block;
+    margin: 5em 0;
+    color: black;
+  }
+
+  div.info {
+    position: absolute;
+    top: 50%;
+    left: 66.6%;
+    transform: translate(-50%, -50%);
+  }
+
+  .project {
+    cursor: pointer;
+    background: #f8f8f8;
+    height: 8em;
+    width: 20em;
+    margin: 3em 0;
+    border-radius: 0.8em;
+    position: relative;
+    transition: transform 0.4s ease-out;
+    overflow: hidden;
+  }
+
+  .project:hover {
+    transform: scale(1.05);
+  }
+
+
+  .project-title {
+    cursor: pointer;
+    z-index: 2;
+    font-family: 'Cinzel', serif;
+    font-size: 1em;
+    color: #b4b4b4;
+    letter-spacing: 0em;
+    font-weight: bold;
+    margin: 0em 0 0 0.35em;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 0 0 2em;
+    transition: all 0.3s ease-out;
+  }
+
+  .project:hover .project-title {
+    font-size: 1.1em;
+    color: white;
+    letter-spacing: 0.2em;
+    /* text-shadow: 0em 0.5em 2em #000000; */
+  }
+
+  .project-num {
+    cursor: pointer;
+    z-index: 1;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.4;
+    font-weight: 300;
+    color: #b4b4b4;
+    position: absolute;
+    top: 12%;
+    right: 5%;
+    margin: 0;
+    transition: 0.4s cubic-bezier(0, 0, 0, 0.99);
+  }
+
+  .project-preview {
+    cursor: pointer;
+    z-index: 0;
+    height: 9em;
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+  }
+
+  .project:hover .project-preview {
+    z-index: 0;
+    height: 9em;
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    transform: translateX(0);
+    opacity: 90;
+  }
+
+  .project:hover .project-num {
+    z-index: 1;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12em;
+    font-weight: 900;
+    color: #ffffff;
+    top: -34%;
+    right: 0%;
+    opacity: 0.1;
+  }
+
+  h6 {
+    margin: 0
+  }
+
+  .skill-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 1em;
+    grid-row-gap: 1.75em;
+    margin: 1.4em 0 4em;
+  }
+
+  .skill {
+    position: relative;
+    height: 4.75em;
+    width: 4.75em;
+    border-radius: 50%;
+    background: #f8f8f8;
+    transition: all 0.4s ease-out
+  }
+
+  .skill i, .skill h6 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #b4b4b4;
+    font-size: 1.75em;
+    transform: translate(-50%, -45%);
+  }
+
+  div.info.skills {
+    position: absolute;
+    top: 50%;
+    left: 66.6%;
+    transform: translate(-50%, -50%);
+  }
+
+  .skill:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
+  h6.photoshop, h6.Ai, h6.Xd {
+    font-family: 'Adobe Clean', sans-serif;
+  }
+
+
+
+  h6.Clang {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: black;
+  }
+
+  .skill.HTML:hover {
+    background: #ff1414;
+  }
+
+  .skill.HTML:hover i {
+    color: white;
+  }
+
+  .skill.CSS:hover {
+    background: #14b9ff;
+  }
+
+  .skill.CSS:hover i {
+    color: white;
+  }
+
+  .skill.Javascript:hover {
+    background: #f0db4f;
+  }
+
+  .skill.Javascript:hover i {
+    color: #323330;
+  }
+
+  .skill.React:hover {
+    background: #14d4ff;
+  }
+
+  .skill.React:hover i {
+    color: white;
+  }
+
+  .skill.SASS:hover {
+    background: #ff90d1;
+  }
+
+  .skill.SASS:hover i {
+    color: white;
+  }
+
+  .skill.Photoshop:hover {
+    background: #001d26;
+  }
+
+  .skill.Photoshop:hover h6 {
+    color: #00c8ff;
+  }
+
+  .skill.Node:hover {
+    background: #303030;
+  }
+
+  .skill.Node:hover i {
+    color: #52c14f;
+  }
+
+  .skill.Java:hover {
+    background: #ff1414;
+  }
+
+  .skill.Java:hover i {
+    color: white;
+  }
+
+  .skill.C:hover {
+    background: #a9bac4;
+  }
+
+  .skill.C:hover h6 {
+    color: white;
+  }
+
+  .skill.Python:hover {
+    background: #008cff;
+  }
+
+  .skill.Python:hover i {
+    color: white;
+  }
+
+  .skill.Illustrator:hover {
+    background-color: #251300;
+  }
+
+  .skill.Illustrator:hover h6 {
+    color: #fe7c00;
+  }
+
+  .skill.Xd:hover {
+    background-color: #272323;
+  }
+
+  .skill.Xd:hover h6 {
+    color: #ff00c9;
+  }
+
+
+
+  strong {
+    transition: all 0.5s ease-out;
+    opacity: 0;
+    margin-left: 0.5em;
+  }
+
+  .btn {
+    color: black;
+    display: inline-block;
+    padding: 0.75em 2em 0.8em;
+    margin: 1.25em 1em 0 -0.1em;
+    background: #f2f2f2;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    border-radius: 2em;
+    transition: background-color 0.4s ease-out;
+    text-align: center;
+  }
+
+
+  .btn:hover {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+  }
+
+  p {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.3em;
+  }
+}
